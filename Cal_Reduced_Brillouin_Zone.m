@@ -67,3 +67,13 @@ legend('Real', 'Est');
 title('Energy Gap');
 xlabel('N');
 ylabel('E');
+
+figure(5)
+title('\Delta k=0.2\pi/a')
+mid = round(sample_num / 2);
+delta_len = round(0.2 * pi * a  / (2 * pi * a / sample_num));
+plot_idx = mid - delta_len: mid + delta_len;
+plot(k0(plot_idx), eigen_E(plot_idx, 2));
+hold on
+plot(k0(plot_idx), eigen_E(plot_idx, 3));
+legend('the 2nd Energy Band', 'the 3rd Energy Band');
